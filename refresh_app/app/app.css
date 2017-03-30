@@ -1,0 +1,17 @@
+.main_box .slider-slide>img{
+  max-width:100%;
+}
+.main_box .row .col img{
+  max-width:100%;
+}
+
+.main_box .card .list .item{
+  height: 50px;
+}
+.main_box .card .list .item p{
+  float:left;
+}
+.main_box .card .list .item span{
+  float:right;
+}
+

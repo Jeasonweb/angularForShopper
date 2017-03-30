@@ -1,0 +1,31 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="login_box">
+  <div class="container">
+    <div class="login">
+      <h2>用户登录</h2>
+      <dl class="clearfloat">
+        <dt><span class="tips" id="uname_tips">用户名不能为空</span>用户名：</dt>
+        <dd>
+          <input ng-model="username" type="text" id="uname" placeholder="邮箱/手机号"/>
+          <em class="icon_user"></em>
+          <i class="icon_error" id="uname_icon"></i>
+        </dd>
+      </dl>
+      <dl>
+        <dt><span class="tips" id="upwd_tips">密码不能为空</span>密码：</dt>
+        <dd>
+          <input ng-model="pwd" type="password" id="upwd" placeholder="密码"/>
+          <em class="icon_pwd"></em>
+          <i class="icon_error" id="upwd_icon"></i>
+        </dd>
+      </dl>
+      <p><lable>
+        <input type="checkbox"/>
+        <span>自动登录</span>
+      </lable></p>
+      <button type="button" id="login" ng-click="login()">立 即 登 录</button>
+      <span>{{errorInfo}}</span>
+    </div>
+  </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

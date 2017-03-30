@@ -1,0 +1,42 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div>
+  <!--面包屑导航-->
+  <div class="breadcrumb">
+    <div class="container">
+      <h2>
+        <a href="">首页</a>&gt;<a href="">产品中心</a>
+      </h2>
+    </div>
+  </div>
+  <!--页面主体-->
+  <div class="main container">
+    <div class="pl_header">
+      <a href="#/list/1" ng-class="listData.type==1?'cur':''">净美仕净化器</a>
+      <a href="#/list/2" ng-class="listData.type==2?'cur':''">净美仕滤网</a>
+    </div>
+    <!-- 产品列表-->
+    <ul class="product_list clearfloat">
+      <li ng-repeat="product in listData.data">
+        <a href="#/detail/{{product.pid}}"><img ng-src="{{product.pic}}" /></a>
+        <div class="pdlist_text clearfloat">
+          <h3>
+            <p>{{product.mode}}</p>
+            <span>{{product.title1}}</span>
+          </h3>
+          <a href="#/detail/{{product.pid}}">查看详情</a>
+        </div>
+      </li>
+    </ul>
+    <!-- 分页导航-->
+    <div class="pages">
+      <button ng-click="getProductData(listData.pageNum-1,listData.type)"
+              ng-disabled="listData.pageNum == 1">上一页</button>
+      <a href="" ng-repeat="page in pageArray"
+          ng-class="$index==listData.pageNum-1?'cur':''"
+          ng-click="getProductData($index+1,listData.type)"
+        >{{page}}</a>
+
+      <a href="">下一页</a>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>
